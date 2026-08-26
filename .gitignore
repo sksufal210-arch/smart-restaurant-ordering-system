@@ -1,0 +1,20 @@
+# Python
+__pycache__/
+*.pyc
+venv/
+env/
+
+# Node
+node_modules/
+build/
+dist/
+
+# Environment secrets
+.env
+*.env.local
+
+# Firebase
+firebase-service-account.json
+
+# OS
+.DS_Store
