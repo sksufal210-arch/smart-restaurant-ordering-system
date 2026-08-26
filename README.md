@@ -1,15 +1,20 @@
-# Smart Restaurant Ordering System
+# backend/ (Django project)
 
-This project has two main folders:
+This is the Python/Django backend. It talks to Firebase (via firebase-admin SDK)
+and exposes API endpoints that the React frontend will call.
 
-- `backend/`  -> Django (Python) API + Firebase connection + AI (Grok) logic
-- `frontend/` -> React app (customer, admin, kitchen, waiter, rider interfaces)
-- `docs/`     -> Project plan and reference documents
+## What goes where
+- `config/`        -> Django project settings, main URLs, WSGI/ASGI entry
+- `apps/`          -> One Django "app" per feature (users, menu, orders, etc.)
+- `firebase/`      -> Firebase Admin SDK setup + your service account key (NEVER commit this file)
+- `utils/`         -> Shared helper functions (e.g. Bayesian rating calculation, bill/invoice generator)
+- `requirements.txt` -> Python package list (Django, firebase-admin, etc.)
+- `manage.py`      -> Django's command-line tool (created automatically when we run `django-admin startproject`)
+- `.env`           -> Secret keys (Grok API key, weather API key, Firebase config) — NEVER commit this file
 
-Open this whole folder in VS Code. We will fill in each subfolder step by step —
-each folder has its own README.md explaining what goes inside it.
-
-## Build order (recommended)
-1. backend/ -> set up Django project + Firebase connection
-2. frontend/ -> set up React app + connect to backend
-3. Build Customer pages first, then Admin, then Kitchen/Waiter/Rider
+## Setup order (once we start coding)
+1. Create virtual environment, install Django + firebase-admin
+2. Run `django-admin startproject config .`
+3. Create each app inside `apps/` with `python manage.py startapp <name>`
+4. Connect Firebase using the service account key in `firebase/`
+5. Build API endpoints app by app
