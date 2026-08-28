@@ -1,16 +1,15 @@
-# React + Vite
+# Smart Restaurant Ordering System
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This project has two main folders:
 
-Currently, two official plugins are available:
+- `backend/`  -> Django (Python) API + Firebase connection + AI (Grok) logic
+- `frontend/` -> React app (customer, admin, kitchen, waiter, rider interfaces)
+- `docs/`     -> Project plan and reference documents
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+Open this whole folder in VS Code. We will fill in each subfolder step by step —
+each folder has its own README.md explaining what goes inside it.
 
-## React Compiler
-
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Build order (recommended)
+1. backend/ -> set up Django project + Firebase connection
+2. frontend/ -> set up React app + connect to backend
+3. Build Customer pages first, then Admin, then Kitchen/Waiter/Rider
